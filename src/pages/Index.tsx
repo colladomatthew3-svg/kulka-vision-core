@@ -4,6 +4,7 @@ import { DashboardView } from "@/components/hub/DashboardView";
 import { ProjectView } from "@/components/hub/ProjectView";
 import { AlertsView } from "@/components/hub/AlertsView";
 import { BriefingView } from "@/components/hub/BriefingView";
+import { AgentsView } from "@/components/hub/AgentsView";
 
 const Index = () => {
   const [activeView, setActiveView] = useState("dashboard");
@@ -27,6 +28,7 @@ const Index = () => {
           {activeView === "dashboard" && (
             <DashboardView onProjectClick={handleProjectClick} />
           )}
+          {activeView === "agents" && <AgentsView />}
           {activeView === "projects" && selectedProject && (
             <ProjectView projectId={selectedProject} onBack={() => handleNavigate("dashboard")} />
           )}
