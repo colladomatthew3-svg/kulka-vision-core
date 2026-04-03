@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, FolderKanban, AlertTriangle, Calendar, Command } from "lucide-react";
+import { LayoutDashboard, FolderKanban, AlertTriangle, Calendar, Command, BrainCircuit } from "lucide-react";
 
 interface SidebarProps {
   activeView: string;
@@ -8,6 +8,7 @@ interface SidebarProps {
 
 const navItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "agents", label: "AI Agents", icon: BrainCircuit },
   { id: "projects", label: "Projects", icon: FolderKanban },
   { id: "alerts", label: "Alerts & Risks", icon: AlertTriangle },
   { id: "briefing", label: "Briefing", icon: Calendar },
