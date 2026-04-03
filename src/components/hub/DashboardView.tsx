@@ -4,6 +4,8 @@ import { ProjectRow } from "@/components/hub/ProjectRow";
 import { AlertItem } from "@/components/hub/AlertItem";
 import { MiniChart } from "@/components/hub/MiniChart";
 import { Badge } from "@/components/ui/badge";
+import { BrainCircuit, RotateCw } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface DashboardViewProps {
   onProjectClick: (id: string) => void;
