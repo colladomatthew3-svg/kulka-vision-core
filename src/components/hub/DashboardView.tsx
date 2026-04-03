@@ -108,6 +108,37 @@ export function DashboardView({ onProjectClick }: DashboardViewProps) {
             <p className="metric-label">Monthly Revenue Trend</p>
             <MiniChart data={[2.1, 2.4, 2.2, 3.1, 2.8, 3.5, 3.2, 4.1, 3.8, 4.5, 4.2, 4.8]} className="mt-2" />
           </Card>
+
+          {/* Agent Status */}
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
+                <BrainCircuit className="w-3.5 h-3.5 text-primary" />
+                AI Agents
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-0 space-y-2">
+              {[
+                { name: "Finance", status: "running", tasks: "847" },
+                { name: "Construction", status: "running", tasks: "1,203" },
+                { name: "Compliance", status: "alert", tasks: "312" },
+                { name: "Risk", status: "running", tasks: "2,156" },
+                { name: "Procurement", status: "idle", tasks: "589" },
+              ].map((a, i) => (
+                <div key={i} className="flex items-center justify-between py-1">
+                  <div className="flex items-center gap-2">
+                    <span className={cn("w-1.5 h-1.5 rounded-full", {
+                      "bg-status-healthy": a.status === "running",
+                      "bg-status-warning": a.status === "alert",
+                      "bg-muted-foreground/40": a.status === "idle",
+                    })} />
+                    <span className="text-xs text-foreground">{a.name}</span>
+                  </div>
+                  <span className="text-[10px] text-muted-foreground">{a.tasks} tasks</span>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
