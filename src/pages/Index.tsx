@@ -1,16 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Sidebar } from "@/components/hub/Sidebar";
+import { DashboardView } from "@/components/hub/DashboardView";
+import { ProjectView } from "@/components/hub/ProjectView";
+import { AlertsView } from "@/components/hub/AlertsView";
+import { BriefingView } from "@/components/hub/BriefingView";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const [activeView, setActiveView] = useState("dashboard");
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  const handleNavigate = (view: string) => {
+    setActiveView(view);
+    setSelectedProject(null);
+  };
+
+  const handleProjectClick = (id: string) => {
+    setSelectedProject(id);
+    setActiveView("projects");
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="flex h-screen overflow-hidden bg-background">
+      <Sidebar activeView={activeView} onNavigate={handleNavigate} />
+      <main className="flex-1 overflow-auto p-6">
+        <div className="max-w-6xl mx-auto">
+          {activeView === "dashboard" && (
+            <DashboardView onProjectClick={handleProjectClick} />
+          )}
+          {activeView === "projects" && selectedProject && (
+            <ProjectView projectId={selectedProject} onBack={() => handleNavigate("dashboard")} />
+          )}
+          {activeView === "projects" && !selectedProject && (
+            <DashboardView onProjectClick={handleProjectClick} />
+          )}
+          {activeView === "alerts" && <AlertsView />}
+          {activeView === "briefing" && <BriefingView />}
+        </div>
+      </main>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
