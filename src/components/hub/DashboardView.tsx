@@ -114,7 +114,7 @@ export function DashboardView({ onProjectClick }: DashboardViewProps) {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
                 <BrainCircuit className="w-3.5 h-3.5 text-primary" />
-                AI Agents
+                Jack Agents
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0 space-y-2">
