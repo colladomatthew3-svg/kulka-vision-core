@@ -24,7 +24,7 @@ export function Sidebar({ activeView, onNavigate }: SidebarProps) {
           </div>
           <div>
             <h1 className="text-sm font-semibold text-foreground tracking-tight">Kulka</h1>
-            <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Intelligence Hub</p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Operating System</p>
           </div>
         </div>
       </div>
