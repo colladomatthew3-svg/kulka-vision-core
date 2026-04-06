@@ -40,6 +40,7 @@ const Index = () => {
           {activeView === "briefing" && <BriefingView />}
         </div>
       </main>
+      <JackChat />
     </div>
   );
 };
