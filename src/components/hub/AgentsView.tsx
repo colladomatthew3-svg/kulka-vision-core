@@ -164,7 +164,7 @@ export function AgentsView() {
         <div>
           <h1 className="text-xl font-semibold text-foreground flex items-center gap-2">
             <BrainCircuit className="w-5 h-5 text-primary" />
-            AI Agents
+            Jack
           </h1>
           <p className="text-sm text-muted-foreground">Autonomous agents running organizational workflows in continuous loops</p>
         </div>
