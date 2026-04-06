@@ -341,7 +341,7 @@ export function AgentsView() {
           ) : (
             <Card className="p-12 flex flex-col items-center justify-center text-center">
               <BrainCircuit className="w-10 h-10 text-muted-foreground/30 mb-3" />
-              <p className="text-sm text-muted-foreground">Select a Jack agent to view its workflows, actions, and performance</p>
+              <p className="text-sm text-muted-foreground">Select an agent to view its workflows, actions, and performance</p>
             </Card>
           )}
         </div>
