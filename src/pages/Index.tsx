@@ -5,6 +5,7 @@ import { ProjectView } from "@/components/hub/ProjectView";
 import { AlertsView } from "@/components/hub/AlertsView";
 import { BriefingView } from "@/components/hub/BriefingView";
 import { AgentsView } from "@/components/hub/AgentsView";
+import { JackChat } from "@/components/hub/JackChat";
 
 const Index = () => {
   const [activeView, setActiveView] = useState("dashboard");
